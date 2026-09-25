@@ -11,3 +11,8 @@ GOOGLE_CLIENT_SECRET=
 
 # OpenAI（Phase 3・4・5・6）
 OPENAI_API_KEY=
+
+# npm run dev（wrangler dev）でローカル動作確認する場合のみ必要。
+# 本番では代わりに `wrangler secret put DISCORD_PUBLIC_KEY` / `wrangler secret put DISCORD_WEBHOOK_URL` で登録する
+DISCORD_PUBLIC_KEY=
+DISCORD_WEBHOOK_URL=
