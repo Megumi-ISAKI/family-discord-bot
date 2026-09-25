@@ -114,11 +114,13 @@ cp wrangler.toml.example wrangler.toml
 | `BOT_GOOGLE_EMAIL` | 家族アカウントの Gmail アドレス |
 | `OTAYORI_CHANNEL_ID` | おたより用フォーラムのチャンネルID（使わない場合は空のままでよい） |
 | `OTAYORI_DRIVE_FOLDER_ID` | おたよりの保存先フォルダのID（フォルダのURLの `/folders/` の後ろ） |
-| `BILLS_CHANNEL_ID` / `BILLS_SHEET_ID` | 請求書用フォーラムのチャンネルID／転記先スプレッドシートのID（使わない場合は空のままでよい） |
-| `MEDICAL_CHANNEL_ID` / `MEDICAL_FOLDER_ID` | 医療費用フォーラムのチャンネルID／シートと写真を保存するフォルダのID（使わない場合は空のままでよい） |
+| `BILLS_CHANNEL_ID` / `BILLS_SHEET_ID` | 請求書用フォーラムのチャンネルID／転記先スプレッドシートのID（スプレッドシートのURLの `/d/` と `/edit` の間。使わない場合は空のままでよい） |
+| `MEDICAL_CHANNEL_ID` / `MEDICAL_FOLDER_ID` | 医療費用フォーラムのチャンネルID／シートと写真を保存するフォルダのID（フォルダのURLの `/folders/` の後ろ。使わない場合は空のままでよい） |
 | `database_id` | 手順4で `wrangler d1 create` を実行すると表示される |
 
 使わない機能がある場合は、該当するチャンネルIDを設定しなければその機能は動きません（Cronは動きますが、対象チャンネルが無いだけです）。不要な機能のCronを`wrangler.toml`の`crons`から削除しても構いません。
+
+⚠️ **`OTAYORI_DRIVE_FOLDER_ID`・`MEDICAL_FOLDER_ID`のフォルダと、`BILLS_SHEET_ID`のスプレッドシートは、Botが自動で作るものではありません。** 先にGoogleドライブ側で作成し、**家族アカウントが編集できる場所**（家族アカウント自身のマイドライブに作るか、家族アカウントに編集権限で共有する）に置いてください。ここが家族アカウントの権限で開けないと、該当機能は403エラーで失敗します。
 
 `.dev.vars.example` をコピーして `.dev.vars` を作り、中身を埋めます（このファイルは他人に渡さないでください。`.gitignore` 済みです）。
 
