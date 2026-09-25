@@ -1,0 +1,7 @@
+node_modules/
+.wrangler/
+.dev.vars
+wrangler.toml
+*.json.key
+service-account*.json
+client_secret*.json
