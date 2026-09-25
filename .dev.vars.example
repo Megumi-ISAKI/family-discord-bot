@@ -1,0 +1,13 @@
+# このファイルを .dev.vars にコピーして値を入れる（.dev.vars は他人に渡さない・公開しない）
+
+# scripts/register-commands.mjs 用
+DISCORD_APPLICATION_ID=
+DISCORD_BOT_TOKEN=
+GUILD_ID=
+
+# scripts/google-login.mjs 用（Google Cloud の OAuth クライアント）
+GOOGLE_CLIENT_ID=
+GOOGLE_CLIENT_SECRET=
+
+# OpenAI（Phase 3・4・5・6）
+OPENAI_API_KEY=

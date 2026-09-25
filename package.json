@@ -1,0 +1,25 @@
+{
+  "name": "family-discord-bot",
+  "version": "1.0.0",
+  "description": "家族専用 Discord サーバーのための Bot（Cloudflare Workers）。カレンダー連携・おたよりOCR・AIコンシェルジュ・請求書と医療費の転記",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "typecheck": "tsc",
+    "register-commands": "node --env-file=.dev.vars scripts/register-commands.mjs",
+    "db:init": "wrangler d1 execute family-discord-bot --remote --file=schema.sql",
+    "google-login": "node --env-file=.dev.vars scripts/google-login.mjs"
+  },
+  "type": "module",
+  "dependencies": {
+    "ical.js": "^2.2.1"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^5.20260923.1",
+    "@types/node": "^22.20.4",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2",
+    "wrangler": "^4.136.3"
+  },
+  "private": true
+}
